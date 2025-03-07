@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/cc_gtmecom/", // YOUR REPO NAME HERE
+  base: "https://performics.com.tw/gtm-cc/"
 });

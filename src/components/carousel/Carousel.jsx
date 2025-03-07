@@ -2,10 +2,10 @@ import "./carousel.scss";
 
 const Carousel = (props) => {
   const images = [
-    "/cc_gtmecom/images/slide-1.jpg",
-    "/cc_gtmecom/images/slide-2.jpg",
-    "/cc_gtmecom/images/slide-3.jpg",
-    "/cc_gtmecom/images/slide-4.jpg",
+    "./images/slide-1.jpg",
+    "./images/slide-2.jpg",
+    "./images/slide-3.jpg",
+    "./images/slide-4.jpg",
   ];
 
   return (

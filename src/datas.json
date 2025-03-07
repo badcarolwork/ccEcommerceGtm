@@ -1,130 +1,138 @@
 {
     "categories": [
-     { "cat_id": "newproduct", "name": "最新產品","sub":false },
+     { "cat_id": "new-product", "name": "最新產品","sub":false },
         {
+        "cat_id": "fashion", 
+        "name": "服飾系列", 
+        "sub":[{
+            "cat_id": "T-Shirt-A", 
+            "name": "流行服飾", 
+            "parent_id": "fashion"
+        },
+        {
+            "cat_id": "T-Shirt-B", 
+            "name": "復古服飾", 
+            "parent_id": "fashion"
+        }]
+    },
+    {
         "cat_id": "skincare", 
-        "name": "韓系保養", 
+        "name": "護膚系列", 
         "sub":[{
             "cat_id": "cleanser", 
-            "name": "卸妝潔顏", 
+            "name": "清潔用品", 
             "parent_id": "skincare"
         },
         {
             "cat_id": "lotion", 
-            "name": "醒肌露/精露", 
+            "name": "保養精華", 
             "parent_id": "skincare"
-        }]
-    },
-    {
-        "cat_id": "makeup", 
-        "name": "韓系彩妝", 
-        "sub":[{
-            "cat_id": "primer", 
-            "name": "妝前修飾", 
-            "parent_id": "makeup"
-        },
-        {
-            "cat_id": "foudation", 
-            "name": "粉底液", 
-            "parent_id": "makeup"
         }]
     }],
     "products": [
         {
-            "product_id": "B123",
-            "product_name": "神經醯胺輕潤牛奶水 170ml",
-            "category_id": "cleanser",
+            "product_id": "T001",
+            "product_name": "T-Shirt N1",
+            "category_id": "T-Shirt-A",
+            "category_name": "流行服飾",
+            "brand":"NI",
             "price": {
-                "regular_price": 1100,
+                "regular_price": 44,
                 "currency": "TWD",
-                "discounted_price": null
+                "discounted_price": 40
             },
             "quantity": 10,
             "variants": [
                 {
-                    "variant_id": "V123-170ml",
-                    "option": { "Size": "170ml" },
+                    "variant_id": "T001",
+                    "option": { "Size": ["S","M","L"] },
                     "quantity": 10
                 }
             ],
             "images": [
                 {
                     "image_url": "/images/slide-1.jpg",
-                    "alt_text": "Front view of 神經醯胺輕潤牛奶水"
+                    "alt_text": "T-Shirt N1"
                 }
             ],
-            "description": "綿密細緻泡沫，溫和洗淨肌膚，添加藍色玻尿酸使肌膚清潔後更加水嫩保濕。",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
+            "description": "Sint occaecat deserunt ex incididunt qui sint. Id minim magna labore pariatur nulla quis.",
+            "tags": "",
             "stock_status": "in_stock"
         },
         {
-            "product_id": "B124",
-            "product_name": "水酷修護水潤洗顏凝膠 200ml",
-            "category_id": "cleanser",
+            "product_id": "T002",
+            "product_name": "T-Shirt N2",
+            "category_id": "T-Shirt-A",
+            "category_name": "流行服飾",
+            "brand":"NI",
             "price": {
-                "regular_price": 900,
+                "regular_price": 33,
                 "currency": "TWD",
-                "discounted_price": null
+                "discounted_price": 30
             },
             "quantity": 10,
             "variants": [
                 {
-                    "variant_id": "V124-200ml",
-                    "option": { "Size": "200ml" },
+                    "variant_id": "T002",
+                    "option": { "Size": ["S","M","L"] },
                     "quantity": 10
                 }
             ],
             "images": [
                 {
                     "image_url": "/images/slide-2.jpg",
-                    "alt_text": "Front view of 水酷修護水潤洗顏凝膠"
+                    "alt_text": "T-Shirt N2"
                 }
             ],
-            "description": "PH值與肌膚相似,柔嫩凝膠劑型溫和接觸肌膚,有效減少清潔過程引起的肌膚刺激。",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
+            "description": "Ea labore sunt magna labore Lorem aliquip irure eu qui commodo minim sunt magna nisi. Deserunt fugiat ullamco excepteur pariatur fugiat occaecat ut quis ad.",
+            "tags": "",
             "stock_status": "in_stock"
         },
         {
-            "product_id": "B125",
-            "product_name": "水酷修護水潤潔顏油 250ml",
-            "category_id": "cleanser",
+            "product_id": "T003",
+            "product_name": "T-Shirt AD 1",
+            "category_id": "T-Shirt-A",
+            "category_name": "流行服飾",
+            "brand":"AD",
             "price": {
-                "regular_price": 1200,
+                "regular_price": 92,
                 "currency": "TWD",
-                "discounted_price": null
+                "discounted_price": 90
             },
             "quantity": 10,
             "variants": [
                 {
-                    "variant_id": "V125-250ml",
-                    "option": { "Size": "250ml" },
+                    "variant_id": "T003",
+                    "option": { "Size": ["S","M","L"] },
                     "quantity": 10
                 }
             ],
             "images": [
                 {
                     "image_url": "/images/slide-1.jpg",
-                    "alt_text": "Front view of 水酷修護水潤潔顏油"
+                    "alt_text": "T-Shirt AD 1"
                 }
             ],
-            "description": "乳霜液態化的神級化妝水，富含神經醯胺與胜肽專利成份。",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
+            "description": "Magna non commodo ipsum nulla aliquip duis enim nostrud pariatur eiusmod. Incididunt ut adipisicing cillum eu Lorem nulla et est.",
+            "tags": "",
             "stock_status": "in_stock"
         },
         {
-            "product_id": "B201",
-            "product_name": "水酷修護保濕醒肌露 (清爽) 160ml",
-            "category_id": "lotion",
+            "product_id": "T004",
+            "product_name": "T-Shirt AD 2",
+            "category_id": "T-Shirt-B",
+            "category_name": "復古服飾",
+            "brand":"AD",
             "price": {
-                "regular_price": 1100,
+                "regular_price": 57,
                 "currency": "TWD",
-                "discounted_price": null
+                "discounted_price": 52
             },
             "quantity": 23,
             "variants": [
                 {
-                    "variant_id": "V201-160ml",
-                    "option": { "Size": "160ml" },
+                    "variant_id": "T004",
+                    "option": { "Size": ["S","M","L"] },
                     "quantity": 23
                 }
             ],
@@ -134,50 +142,54 @@
                     "alt_text": "Front view of 水酷修護保濕醒肌露"
                 }
             ],
-            "description": "高保濕精華級化妝水，使肌膚快速充滿爆炸水能量。",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
+            "description": "Ad et aliquip esse ut sint velit. Voluptate id ad esse aliquip culpa consectetur esse reprehenderit veniam minim elit eu.",
+            "tags": "",
             "stock_status": "in_stock"
         },
         {
-            "product_id": "B202",
-            "product_name": "神經醯胺輕潤牛奶水 170ml",
-            "category_id": "lotion",
+            "product_id": "T005",
+            "product_name": "T-Shirt MJ 1",
+            "category_id": "T-Shirt-B",
+            "category_name": "復古服飾",
+            "brand":"MJ",
             "price": {
-                "regular_price": 1200,
+                "regular_price": 90,
                 "currency": "TWD",
-                "discounted_price": null
+                "discounted_price": 85
             },
             "quantity": 14,
             "variants": [
                 {
-                    "variant_id": "V202-170ml",
-                    "option": { "Size": "170ml" },
+                    "variant_id": "T005",
+                    "option": { "Size": ["S","M","L"] },
                     "quantity": 14
                 }
             ],
             "images": [
                 {
                     "image_url": "/images/slide-1.jpg",
-                    "alt_text": "Front view of 神經醯胺輕潤牛奶水"
+                    "alt_text": "Front view of T-Shirt MJ 1"
                 }
             ],
-            "description": "使用後無油膩殘留感，快速乳化、溶解臉部肌膚油脂。",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
+            "description": "Minim elit minim est ullamco Lorem. Exercitation ex sint nisi dolore cillum nisi cillum anim ullamco.",
+            "tags": "",
             "stock_status": "in_stock"
         },
         {
-            "product_id": "B203",
-            "product_name": "維他命C淨膚煥顏精露 150ml",
-            "category_id": "lotion",
+            "product_id": "T006",
+            "product_name": "T-Shirt MJ 2",
+            "category_id": "T-Shirt-B",
+            "category_name": "復古服飾",
+            "brand":"MJ",
             "price": {
-                "regular_price": 1530,
+                "regular_price": 62,
                 "currency": "TWD",
-                "discounted_price": null
+                "discounted_price": 58
             },
             "quantity": 27,
             "variants": [
                 {
-                    "variant_id": "V204-150ml",
+                    "variant_id": "T006",
                     "option": { "Size": "150ml" },
                     "quantity": 27
                 }
@@ -188,23 +200,25 @@
                     "alt_text": "Front view of 維他命C淨膚煥顏精露"
                 }
             ],
-            "description": "超級維他命C發光水，富含3重維他命淨膚配方，加上超級莓果精萃， 養成不易生斑肌，秒拋光、瞬補氧、超細緻！",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
+            "description": "Adipisicing culpa sint cillum eiusmod. Dolor reprehenderit magna velit non culpa ea dolor laborum est nulla deserunt minim",
+            "tags": "",
             "stock_status": "in_stock"
         },
         {
-            "product_id": "B401",
-            "product_name": "柔霧調色隔離乳EX SPF28 PA++ No.40 柔紫",
-            "category_id": "primer",
+            "product_id": "B001",
+            "product_name": "Cleanser LA1",
+            "category_id": "cleanser",
+            "category_name": "清潔用品",
+            "brand":"La",
             "price": {
-                "regular_price": 1300,
+                "regular_price": 31,
                 "currency": "TWD",
                 "discounted_price": null
             },
-            "quantity": 27,
+            "quantity": 30,
             "variants": [
                 {
-                    "variant_id": "V401-30ml",
+                    "variant_id": "B001",
                     "option": { "Size": "30ml" },
                     "quantity": 31
                 }
@@ -212,26 +226,28 @@
             "images": [
                 {
                     "image_url": "/images/slide-1.jpg",
-                    "alt_text": "Front view of NEO型塑霧感粉底液"
+                    "alt_text": "Front view of"
                 }
             ],
-            "description": "自然校正膚色，打造原生肌妝感，清新乾淨底妝，均勻、完美適用任何肌膚。",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
+            "description": "Magna non commodo ipsum nulla aliquip duis enim nostrud pariatur eiusmod. Incididunt ut adipisicing cillum eu Lorem nulla et est.",
+            "tags": "",
             "stock_status": "in_stock"
         },
         {
-            "product_id": "B402",
-            "product_name": "柔霧調色隔離乳EX SPF28 PA++ No.60 嫩綠",
-            "category_id": "primer",
+            "product_id": "B002",
+            "product_name": "Cleanser LA2",
+            "category_id": "cleanser",
+            "category_name": "清潔用品",
+            "brand":"La",
             "price": {
-                "regular_price": 1300,
+                "regular_price": 63,
                 "currency": "TWD",
-                "discounted_price": null
+                "discounted_price": 60
             },
-            "quantity": 27,
+            "quantity": 30,
             "variants": [
                 {
-                    "variant_id": "V402-30ml",
+                    "variant_id": "B002",
                     "option": { "Size": "30ml" },
                     "quantity": 31
                 }
@@ -239,80 +255,57 @@
             "images": [
                 {
                     "image_url": "/images/slide-1.jpg",
-                    "alt_text": "Front view of NEO型塑霧感粉底液"
+                    "alt_text": "Front view of "
                 }
             ],
-            "description": "自然校正膚色，打造原生肌妝感，清新乾淨底妝，均勻、完美適用任何肌膚。",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
+            "description": "Adipisicing culpa sint cillum eiusmod. Dolor reprehenderit magna velit non culpa ea dolor laborum est nulla deserunt minim.",
+            "tags": "",
             "stock_status": "in_stock"
         },
         {
-            "product_id": "B301",
-            "product_name": "NEO型塑霧感粉底液 30ml",
-            "category_id": "foudation",
+            "product_id": "B003",
+            "product_name": "Cleanser LA3",
+            "category_id": "cleanser",
+            "category_name": "清潔用品",
+            "brand":"La",
             "price": {
-                "regular_price": 1450,
+                "regular_price": 55,
                 "currency": "TWD",
-                "discounted_price": null
+                "discounted_price": 51
             },
-            "quantity": 27,
+            "quantity": 30,
             "variants": [
                 {
-                    "variant_id": "V301-30ml",
-                    "option": { "color": ["17N", "21N", "23N"] },
+                    "variant_id": "B003",
+                    "option": { "Size": "30ml" },
                     "quantity": 31
                 }
             ],
             "images": [
                 {
-                    "image_url": "/images/slide-1.jpg",
-                    "alt_text": "Front view of NEO型塑霧感粉底液"
+                    "image_url": "/images/slide-2.jpg",
+                    "alt_text": "Front view of "
                 }
             ],
-            "description": "秒上韓系濾鏡肌！清盈質地完美貼合肌膚，高遮瑕不厚重、持久不暗沉，從肌底透出自然光澤！",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
+            "description": "Minim Lorem in officia irure exercitation ea amet. Ipsum aliquip pariatur magna commodo nisi sint esse.",
+            "tags": "",
             "stock_status": "in_stock"
         },
         {
-            "product_id": "B302",
-            "product_name": "NEO型塑光感粉底液 30ml",
-            "category_id": "foudation",
+            "product_id": "B004",
+            "product_name": "Cleanser CR1",
+            "category_id": "lotion",
+            "category_name": "保養精華",
+            "brand":"CR",
             "price": {
-                "regular_price": 1450,
+                "regular_price": 90,
                 "currency": "TWD",
-                "discounted_price": null
+                "discounted_price": 85
             },
-            "quantity": 27,
+            "quantity": 30,
             "variants": [
                 {
-                    "variant_id": "V302-30ml",
-                    "option": { "color": ["17N", "21N", "23N"] },
-                    "quantity": 31
-                }
-            ],
-            "images": [
-                {
-                    "image_url": "/images/slide-1.jpg",
-                    "alt_text": "Front view of NEO型塑霧感粉底液"
-                }
-            ],
-            "description": "秒上韓系濾鏡肌！清盈質地完美貼合肌膚，高遮瑕不厚重、持久不暗沉，從肌底透出自然光澤！",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
-            "stock_status": "in_stock"
-        },
-        {
-            "product_id": "B402",
-            "product_name": "柔霧調色隔離乳EX SPF28 PA++ No.60 嫩綠",
-            "category_id": "newproduct",
-            "price": {
-                "regular_price": 1300,
-                "currency": "TWD",
-                "discounted_price": null
-            },
-            "quantity": 27,
-            "variants": [
-                {
-                    "variant_id": "V402-30ml",
+                    "variant_id": "B004",
                     "option": { "Size": "30ml" },
                     "quantity": 31
                 }
@@ -320,11 +313,98 @@
             "images": [
                 {
                     "image_url": "/images/slide-1.jpg",
-                    "alt_text": "Front view of NEO型塑霧感粉底液"
+                    "alt_text": "Front view of "
                 }
             ],
-            "description": "自然校正膚色，打造原生肌妝感，清新乾淨底妝，均勻、完美適用任何肌膚。",
-            "tags": ["hydrating", "milk", "ceramides", "skincare"],
+            "description": "Minim elit minim est ullamco Lorem. Exercitation ex sint nisi dolore cillum nisi cillum anim ullamco.",
+            "tags": "",
+            "stock_status": "in_stock"
+        },
+        {
+            "product_id": "B005",
+            "product_name": "Cleanser CR2",
+            "category_id": "lotion",
+            "category_name": "保養精華",
+            "brand":"CR",
+            "price": {
+                "regular_price": 16,
+                "currency": "TWD",
+                "discounted_price": 10
+            },
+            "quantity": 30,
+            "variants": [
+                {
+                    "variant_id": "B005",
+                    "option": { "Size": "30ml" },
+                    "quantity": 31
+                }
+            ],
+            "images": [
+                {
+                    "image_url": "/images/slide-2.jpg",
+                    "alt_text": "Front view of "
+                }
+            ],
+            "description": "Quis dolor elit id qui nulla ea esse nulla velit. Occaecat Lorem laboris tempor proident ex.",
+            "tags": "",
+            "stock_status": "in_stock"
+        },
+        {
+            "product_id": "B006",
+            "product_name": "Cleanser CR3",
+           "category_id": "lotion",
+            "category_name": "保養精華",
+            "brand":"CR",
+            "price": {
+                "regular_price": 82,
+                "currency": "TWD",
+                "discounted_price": 76
+            },
+            "quantity": 30,
+            "variants": [
+                {
+                    "variant_id": "B006",
+                    "option": { "Size": "30ml" },
+                    "quantity": 31
+                }
+            ],
+            "images": [
+                {
+                    "image_url": "/images/slide-4.jpg",
+                    "alt_text": "Front view of "
+                }
+            ],
+            "description": "Tempor sit irure commodo exercitation do cupidatat eiusmod laborum pariatur enim labore. Laboris amet adipisicing duis mollit.",
+            "tags": "",
+            "stock_status": "in_stock"
+        },
+        {
+            "product_id": "B007",
+            "product_name": "Cleanser CR4",
+            "category_id": "new-product",
+            "category_name": "最新產品",
+            "brand":"CR",
+            "price": {
+                "regular_price": 82,
+                "currency": "TWD",
+                "discounted_price": 76
+            },
+            "quantity": 30,
+            "variants": [
+                {
+                    "variant_id": "B007",
+                    "option": { "Size": "30ml" },
+                    "quantity": 31
+                }
+            ],
+            "images": [
+                {
+                    "image_url": "/images/slide-1.jpg",
+                    "alt_text": "Front view of "
+                }
+            ],
+            "description": "Tempor sit irure commodo exercitation do cupidatat eiusmod laborum pariatur enim labore. Laboris amet adipisicing duis mollit.",
+            "tags": "",
             "stock_status": "in_stock"
         }
     ]

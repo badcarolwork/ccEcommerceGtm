@@ -1,22 +1,152 @@
 nav .cart-btn {
-  height: 30px;
-  width: 200px;
   display: flex;
 }
-nav .cart-btn span {
-  width: 45%;
+nav .cart-btn a {
+  text-decoration: none;
+  color: inherit;
 }
 nav .cart-btn svg {
-  transform: scale(1.5);
+  transform: scale(1.3);
+  margin-right: 20px;
 }
 
 .product-list .card {
   border: 0;
 }
+.product-list .card .card-footer {
+  background-color: rgba(0, 0, 0, 0);
+  border-top: 0;
+}
+.product-list .card .stock-status {
+  padding: 5px;
+  line-height: auto;
+}
+.product-list .card .more-info {
+  width: 50%;
+}
+.product-list .card .card-body .price-tag {
+  margin-bottom: 0;
+}
+.product-list .card .card-body .original .oriPrice-text {
+  font-size: 20px;
+  padding-right: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.product-list .card .card-body .currency-text {
+  font-size: 12px;
+  padding-right: 5px;
+}
+.product-list .card .card-body .oriPrice-text {
+  font-size: 16px;
+  text-decoration: line-through;
+  padding-right: 5px;
+}
+.product-list .card .card-body .discounted-text {
+  font-size: 20px;
+  color: red;
+  font-weight: bold;
+}
+.product-list .card .card-body .discounted-text .badge {
+  font-size: 12px;
+  margin-left: 10px;
+}
 
+.product-detail .product-detail-img {
+  width: 100%;
+  height: auto;
+}
+.product-detail .product-id-text {
+  font-style: italic;
+  font-size: 0.9rem;
+  float: right;
+  color: grey;
+}
+.product-detail .quantity-control {
+  max-width: 130px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+.product-detail .quantity-control input {
+  border: 0;
+  width: 40%;
+}
+.product-detail .quantity-control button {
+  border: 0;
+  width: 30%;
+}
+
+.price-tag {
+  margin-bottom: 0;
+}
+
+.original .oriPrice-text {
+  font-size: 20px;
+  padding-right: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.currency-text {
+  font-size: 12px;
+  padding-right: 5px;
+}
+
+.oriPrice-text {
+  font-size: 16px;
+  text-decoration: line-through;
+  padding-right: 5px;
+}
+
+.discounted-text {
+  font-size: 20px;
+  color: red;
+  font-weight: bold;
+}
+.discounted-text .badge {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.checkout .checkout-list {
+  display: flex;
+  justify-content: space-between;
+}
 .checkout img {
   width: auto;
   max-height: 100px;
   margin-right: 2%;
-  float: left;
+}
+.checkout .cart-remove {
+  border: 0;
+  margin: 0;
+  margin-left: auto;
+  background: rgba(0, 0, 0, 0);
+  color: red;
+}
+.checkout .cart-remove svg {
+  margin-right: 10px;
+}
+.checkout .total-amount {
+  display: flex;
+  justify-content: end;
+  margin: 20px;
+}
+.checkout .payment-btn {
+  width: 200px;
+  float: right;
+  margin: 20px 10px;
+  font-weight: bold;
+}
+.checkout .payment-btn svg {
+  margin-right: 20px;
+}
+
+.shipping-page .checkout-cart-preview {
+  font-size: 14px;
+}
+.shipping-page .checkout-cart-preview img {
+  width: 50%;
+  height: auto;
 }/*# sourceMappingURL=App.css.map */

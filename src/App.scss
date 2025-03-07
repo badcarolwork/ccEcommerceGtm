@@ -16,9 +16,106 @@ nav {
 .product-list {
     .card {
         border: 0;
+        .card-footer {
+            background-color: rgba(0, 0, 0, 0);
+            border-top: 0;
+        }
+        .stock-status {
+            padding: 5px;
+            line-height: auto;
+        }
+        .more-info {
+            width: 50%;
+        }
+        .card-body {
+            .price-tag {
+                margin-bottom: 0;
+            }
+            .original {
+                .oriPrice-text {
+                    font-size: 20px;
+                    padding-right: 5px;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+            }
+            .currency-text {
+                font-size: 12px;
+                padding-right: 5px;
+            }
+            .oriPrice-text {
+                font-size: 16px;
+                text-decoration: line-through;
+                padding-right: 5px;
+            }
+            .discounted-text {
+                font-size: 20px;
+                color: red;
+                font-weight: bold;
+                .badge {
+                    font-size: 12px;
+                    margin-left: 10px;
+                }
+            }
+        }
     }
 }
+.product-detail {
+    .product-detail-img {
+        width: 100%;
+        height: auto;
+    }
+    .product-id-text {
+        font-style: italic;
+        font-size: 0.9rem;
+        float: right;
+        color: grey;
+    }
+    .quantity-control {
+        max-width: 130px;
+        margin: 10px 0;
+        border-radius: 10px;
+        border: 1px solid lightgray;
 
+        input {
+            border: 0;
+            width: 40%;
+        }
+        button {
+            border: 0;
+            width: 30%;
+        }
+    }
+}
+.price-tag {
+    margin-bottom: 0;
+}
+.original {
+    .oriPrice-text {
+        font-size: 20px;
+        padding-right: 5px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+.currency-text {
+    font-size: 12px;
+    padding-right: 5px;
+}
+.oriPrice-text {
+    font-size: 16px;
+    text-decoration: line-through;
+    padding-right: 5px;
+}
+.discounted-text {
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    .badge {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+}
 .checkout {
     .checkout-list {
         display: flex;
@@ -52,6 +149,17 @@ nav {
         font-weight: bold;
         svg {
             margin-right: 20px;
+        }
+    }
+}
+
+// shipping info page
+.shipping-page {
+    .checkout-cart-preview {
+        font-size: 14px;
+        img {
+            width: 50%;
+            height: auto;
         }
     }
 }

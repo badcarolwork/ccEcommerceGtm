@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProductList from "../products/ProductList";
 import data from "../../datas.json";
 import Carousel from "../carousel/Carousel";
 
 const HomePage = () => {
+  useEffect(() => {
+    window.dataLayer.push({
+      event: "pageView",
+    });
+  }, []);
+
   return (
     <div>
       <Carousel />
@@ -12,7 +18,8 @@ const HomePage = () => {
           <h2>新品上市</h2>
           <ProductList
             products={data.products}
-            selectedCategory="newproduct"
+            selectedCategory="new-product"
+            oriUri="home"
           ></ProductList>
         </div>
         <div className="top-cat">
@@ -20,6 +27,7 @@ const HomePage = () => {
           <ProductList
             products={data.products}
             selectedCategory="cleanser"
+            oriUri="home"
           ></ProductList>
         </div>
       </div>

@@ -6,34 +6,55 @@ const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-  // Initialize the cart state with data from localStorage if it exists
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  // Sync cart changes to localStorage whenever the cart state updates
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   // Function to add items to the cart
-  const addToCart = (item) => {
-    setCart((prevCart) => [...prevCart, item]);
+  const addToCart = (product) => {
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find(
+        (item) => item.product_id === product.product_id
+      );
 
-    // Push to GTM data layer
+      if (existingProduct) {
+        // Update the quantity of the existing product
+        return prevCart.map((item) =>
+          item.product_id === product.product_id
+            ? { ...item, quantity: existingProduct.quantity + product.quantity }
+            : item
+        );
+      } else {
+        // Add the new product with its quantity
+        return [...prevCart, product];
+      }
+    });
+
+    const _this = event.target;
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: "addToCart",
+      event: "gtm_click",
+      button: {
+        text: _this.innerText,
+        classes: _this.getAttribute("class"),
+        btn_id: _this.id,
+      },
       ecommerce: {
-        currencyCode: item.price.currency,
+        currencyCode: product.price.currency,
         add: {
           products: [
             {
-              id: item.product_id,
-              name: item.product_name,
-              price: item.price.regular_price,
-              quantity: 1,
+              item_id: product.product_id,
+              item_name: product.product_name,
+              price: product.price.regular_price,
+              item_category: product.category_id,
+              quantity: product.quantity,
+              currency: product.price.currency,
             },
           ],
         },
@@ -41,28 +62,72 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  const removeFromCart = (product_id) => {
+  const removeFromCart = (event, product_id, products) => {
     const updatedCart = cart.filter((item) => item.product_id !== product_id);
     setCart(updatedCart);
 
-    // Optional: You can also push to GTM data layer for "remove from cart" event
+    const _this = event.target;
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: "removeFromCart",
-      ecommerce: {
-        remove: {
-          products: [
-            {
-              id: product_id,
-            },
-          ],
-        },
+      event: "gtm_click",
+      button: {
+        text: _this.getAttribute("value"),
+        classes: _this.getAttribute("class"),
+        btn_id: _this.id,
+      },
+    });
+
+    window.dataLayer.push({
+      event: "remove_from_cart",
+      button: {
+        text: _this.getAttribute("value"),
+        classes: _this.getAttribute("class"),
+        btn_id: _this.id,
+      },
+      remove: {
+        products: [
+          {
+            item_id: products.product_id,
+            item_name: products.product_name,
+            price: products.price.regular_price,
+            item_category: products.category_id,
+            quantity: products.quantity,
+            currency: products.price.currency,
+            discounted_price: products.price.discounted_price,
+          },
+        ],
       },
     });
   };
 
+  // Clear all items from the cart
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem("cart");
+  };
+
+  // Calculate total amount
+  let oriTotalAmount;
+  const totalAmount = cart.reduce((sum, item) => {
+    const price = item.price.discounted_price
+      ? item.price.discounted_price
+      : item.price.regular_price;
+
+    oriTotalAmount = sum + item.price.regular_price * item.quantity;
+    return sum + price * item.quantity;
+  }, 0);
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        totalAmount,
+        oriTotalAmount,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

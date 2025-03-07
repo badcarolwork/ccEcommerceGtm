@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -9,19 +9,26 @@ import ProductsPage from "./components/products/ProductsListPage";
 import HomePage from "./components/home/HomePage";
 import CheckoutPage from "./components/cart/CheckoutPage";
 import { CartProvider } from "./components/cart/CartContext";
-import PaymentPage from "./components/cart/PaymentPage";
+import PaymentResult from "./components/cart/PaymentResult";
+import ProductDetailsPage from "./components/products/ProductDetailsPage";
+import ShippingForm from "./components/cart/ShippingForm";
 
 function App() {
   return (
     <div className="fluid">
       <CartProvider>
-        <Router basename="/cc_gtmecom/">
+        <Router>
           <NavBar categories={data.categories} />
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/products/:cat_id" element={<ProductsPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/payment" element={<PaymentPage />} />
+            <Route path="/gtm-cc/" element={<HomePage />} />
+            <Route path="/gtm-cc/products/:cat_id" element={<ProductsPage />} />
+            <Route
+              path="/gtm-cc/:cat_id/:productId"
+              element={<ProductDetailsPage data={data} />}
+            />
+            <Route path="/gtm-cc/checkout" element={<CheckoutPage />} />
+            <Route path="/gtm-cc/shipment" element={<ShippingForm />} />
+            <Route path="/gtm-cc/orderconfirm" element={<PaymentResult />} />
           </Routes>
         </Router>
       </CartProvider>
